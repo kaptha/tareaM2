@@ -1,7 +1,8 @@
 const btnCryp = document.querySelector('#btnCryp');
 const temp = document.querySelector('#temp');
 const cryp = document.querySelector('#cryp');
- const url = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,MXN,EUR';
+
+//const url = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,MXN,EUR';
 // Crear un Promise que devuelve las criptomonedas
 const obtenerCriptomonedas  = criptomonedas => new Promise( resolve => {
     resolve(criptomonedas);
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	consultarCriptomonedas();
     btnCryp.addEventListener('click', (e) =>{
               
-        getCrypto();
+        getDolar();        
     }) 
 });
 //Rellenar select de criptomonedas
@@ -31,8 +32,13 @@ function selectCriptomonedas(criptomonedas) {
     })
 }
 //Fin rellenar select
-const getCrypto = async () => {
-    const response = await fetch(url); // GET
+
+//Funciones para consumir API
+const getDolar = async () => {
+    const moneda = cryp.value;
+    const temporalidad = temp.value;
+    const urlconsulta = 'https://min-api.cryptocompare.com/data/v2/'+temporalidad+'?fsym='+moneda+'&tsym=USD&limit=10';
+    const response = await fetch(urlconsulta);
     const json = await response.json();
-    console.log(json);
+    console.log(json);    
 }
