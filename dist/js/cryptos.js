@@ -41,10 +41,10 @@ function selectCriptomonedas(criptomonedas) {
 //Funciones para consumir API
 const getDivisas = async () => {
     const moneda = cryp.value;
-    
-    const urlconsulta = 'https://min-api.cryptocompare.com/data/price?fsym='+moneda+'&tsyms=USD,MXN,EUR';
+    const tempo = temp.value;
+    const urlconsulta = 'https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym=USD&limit=10';
     const response = await fetch(urlconsulta);
     const json = await response.json();
     
-    console.log(json.MXN);    
+    console.log(json);    
 }
