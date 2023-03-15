@@ -1,3 +1,4 @@
+
 new Chart(document.getElementById("line-chart"), {
     type: "line",
     data: {
@@ -66,3 +67,4 @@ new Chart(document.getElementById("line-chart"), {
       },
     },
   });
+  

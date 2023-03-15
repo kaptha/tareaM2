@@ -15,7 +15,6 @@ const cryptos =[];
 const divisas = [
     "USD", "MXN", "EUR"
 ];
-limpiar = false;
 //const url = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,MXN,EUR';
 // Crear un Promise que devuelve las criptomonedas
 const obtenerCriptomonedas  = criptomonedas => new Promise( resolve => {
@@ -27,14 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //getSimbolos();
     
     btnCryp.addEventListener('click', (e) =>{
-        /*if(limpiar){
-            limpiarDivisas();
-            getDivisas(); 
-            limpiar=false;
-        }else{
-            */
+
             getDivisas();   
-        //} 
             
     }) 
 });
@@ -62,6 +55,8 @@ function selectCriptomonedas(criptomonedas) {
 
 //Funciones para consumir API
 
+
+
 const getDivisas = async () => {
     const moneda = cryp.value;
     const tempo = temp.value;
@@ -87,24 +82,9 @@ const getDivisas = async () => {
             const text = document.createTextNode(data[0].close)
             EUR.appendChild(text);
         }
-    limpiar = true;
     })
 }
 
-function limpiarDivisas () {
-    const newMXN = document.createElement('h5');
-    newMXN.id = "MXN";
-    newMXN.className = "text-white-50";
-    mxn.replaceChild(newMXN,MXN);
-    const newUSD = document.createElement('h5');
-    newUSD.id = "USD";
-    newUSD.className = "text-white-50";
-    usd.replaceChild(newMXN,USD);
-    const newEUR = document.createElement('h5');
-    newEUR.id = "EUR";
-    newEUR.className = "text-white-50";
-    eur.replaceChild(newEUR,EUR);
-}
 /*
 const getSimbolos = async () => {
     const moneda = cryp.value;
@@ -115,3 +95,4 @@ const getSimbolos = async () => {
     console.log(json);
 }
 */
+
