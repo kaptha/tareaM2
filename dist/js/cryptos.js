@@ -11,6 +11,11 @@ const USD = document.querySelector('#USD');
 const MXN = document.querySelector('#MXN');
 const EUR = document.querySelector('#EUR');
 
+const logoCryp = document.querySelector('.LogoCryp')
+const logoMXN = document.querySelector('.logoMXN')
+const logoUSD = document.querySelector('.LogoUSD')
+const logoEUR = document.querySelector('.LogoEUR')
+
 const cryptos =[];
 const divisas = [
     "USD", "MXN", "EUR"
@@ -23,12 +28,12 @@ const obtenerCriptomonedas  = criptomonedas => new Promise( resolve => {
 document.addEventListener('DOMContentLoaded', () => {
 	consultarCriptomonedas();
 
-    //getSimbolos();
+    
     
     btnCryp.addEventListener('click', (e) =>{
 
             getDivisas();   
-            
+            getSimbolos();
     }) 
 });
 //Rellenar select de criptomonedas
@@ -71,28 +76,36 @@ const getDivisas = async () => {
 
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(data[0].close)
+            const text = document.createTextNode("$"+data[0].close)
             USD.appendChild(text);
         }else if (divisa === "MXN"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(data[0].close)
+            const text = document.createTextNode("$"+data[0].close)
             MXN.appendChild(text);
         }else{
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(data[0].close)
+            const text = document.createTextNode("€"+data[0].close)
             EUR.appendChild(text);
         }
     })
 }
 
-/*
+
 const getSimbolos = async () => {
+    logoCryp.innerHTML='';
     const moneda = cryp.value;
 
-    const response = await fetch('https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol='+moneda')
-    const json = await response.json();
+    const response = await fetch('https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol='+moneda)
+    const {Data} = await response.json();
+    const logo = Data.LOGO_URL;
+    console.log(logo);
+    
+    var logoCrypSrc =document.createElement('img');
+    logoCrypSrc.src=logo;
+    logoCrypSrc.style= "width: 50px;";
+    logoCryp.appendChild(logoCrypSrc);
 
-    console.log(json);
+
 }
-*/
+
 
