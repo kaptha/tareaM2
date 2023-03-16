@@ -1,5 +1,6 @@
 
-new Chart(document.getElementById("line-chart"), {
+
+const Grafica =new Chart(document.getElementById("line-chart"), {
   type: "line",
   data: {
     labels: [4500, 3500, 3200, 3050, 2700, 2450, 2200, 1750, 1499, 2050],
@@ -56,4 +57,3 @@ new Chart(document.getElementById("line-chart"), {
   },
 });
 
-  
