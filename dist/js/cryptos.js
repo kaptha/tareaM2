@@ -1,6 +1,7 @@
 const btnCryp = document.querySelector('#btnCryp');
 const temp = document.querySelector('#temp');
 const cryp = document.querySelector('#cryp');
+const formulario = document.querySelector('#crip-form');
 //cuadro divisas
 
 const mxn = document.querySelector('#mxn');
@@ -72,16 +73,19 @@ const getDivisas = async () => {
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode(data[0].close)
-            USD.appendChild(text);
+            USD.appendChild(text);    
+                   
         }else if (divisa === "MXN"){
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode(data[0].close)
-            MXN.appendChild(text);
+            MXN.appendChild(text);            
         }else{
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode(data[0].close)
             EUR.appendChild(text);
         }
+        $("#samedata-modal").modal("hide");
+        formulario.reset();
     })
 }
 
