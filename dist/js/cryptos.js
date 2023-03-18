@@ -14,13 +14,13 @@ const eur = document.querySelector('#eur');
 
 const USD = document.querySelector('#USD');
 //const MXN = document.querySelector('#MXN');
-const MXN = document.querySelector('#CAD');
+const CAD = document.querySelector('#CAD');
 const EUR = document.querySelector('#EUR');
 const CRY = document.querySelector('#criptoselect');
 
 const logoCryp = document.querySelector('.LogoCryp')
 //const logoMXN = document.querySelector('.logoMXN')
-const logoMXN = document.querySelector('.logoCAD')
+const logoCAD = document.querySelector('.logoCAD')
 const logoUSD = document.querySelector('.LogoUSD')
 const logoEUR = document.querySelector('.LogoEUR')
 
