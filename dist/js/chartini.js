@@ -9,7 +9,8 @@ const Grafica =new Chart(document.getElementById("line-chart"), {
         data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
        // label: "Peso",
         label: "Dolar Canadiense",
-        borderColor: "#3e95cd",
+       // borderColor: "#3e95cd",
+        borderColor: "#FF0000",
         fill: false,
       },
       {

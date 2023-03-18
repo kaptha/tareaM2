@@ -171,7 +171,8 @@ function chart (cadData,usdData, eurData /*, data */){
 //                label: "Peso",
                 data: cadData.map(i=>i),
                 label: "Dolar Canadiense",
-                borderColor: "#3e95cd",
+              //  borderColor: "#3e95cd",
+                borderColor: "#FF0000",
                 fill: false,
             },
             {
