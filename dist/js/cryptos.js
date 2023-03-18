@@ -14,6 +14,7 @@ const eur = document.querySelector('#eur');
 const USD = document.querySelector('#USD');
 const MXN = document.querySelector('#MXN');
 const EUR = document.querySelector('#EUR');
+const CRY = document.querySelector('#criptoselect');
 
 const logoCryp = document.querySelector('.LogoCryp')
 const logoMXN = document.querySelector('.logoMXN')
@@ -84,7 +85,7 @@ const getDivisas = async () => {
         const {Data} = await response.json();
         const data = Data.Data;
         console.log(data);
-
+        
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode("$"+data[0].close)
@@ -121,6 +122,9 @@ const getSimbolos = async () => {
     const {Data} = await response.json();
     const logo = Data.LOGO_URL;
     console.log(logo);
+    const textc = document.createTextNode(moneda)
+    CRY.appendChild(textc);
+    
     
     var logoCrypSrc =document.createElement('img');
     logoCrypSrc.src=logo;
