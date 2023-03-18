@@ -116,8 +116,10 @@ const getDivisas = async () => {
             eurData =data.map(i => i.close);
             eurDataConfirm=true;
         }
-        if(eurDataConfirm&&mxnDataConfirm&&usdDataConfirm){
-            chart(mxnData,usdData, eurData, data);
+//        if(eurDataConfirm&&mxnDataConfirm&&usdDataConfirm){
+        if(eurDataConfirm&&cadDataConfirm&&usdDataConfirm){    
+           // chart(mxnData,usdData, eurData, data);
+            chart(cadData,usdData, eurData, data);
         } 
         $("#samedata-modal").modal("hide");
         formulario.reset();
