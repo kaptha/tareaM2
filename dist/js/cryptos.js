@@ -7,23 +7,27 @@ const cryp = document.querySelector('#cryp');
 const formulario = document.querySelector('#crip-form');
 //cuadro divisas
 
-const mxn = document.querySelector('#mxn');
+const cad = document.querySelector('#cad');
+//const mxn = document.querySelector('#mxn');
 const usd = document.querySelector('#usd');
 const eur = document.querySelector('#eur');
 
 const USD = document.querySelector('#USD');
-const MXN = document.querySelector('#MXN');
+//const MXN = document.querySelector('#MXN');
+const MXN = document.querySelector('#CAD');
 const EUR = document.querySelector('#EUR');
 const CRY = document.querySelector('#criptoselect');
 
 const logoCryp = document.querySelector('.LogoCryp')
-const logoMXN = document.querySelector('.logoMXN')
+//const logoMXN = document.querySelector('.logoMXN')
+const logoMXN = document.querySelector('.logoCAD')
 const logoUSD = document.querySelector('.LogoUSD')
 const logoEUR = document.querySelector('.LogoEUR')
 
 const cryptos =[];
 const divisas = [
-    "USD", "MXN", "EUR"
+//    "USD", "MXN", "EUR"
+    "USD", "CAD", "EUR"
 ];
 //const url = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,MXN,EUR';
 // Crear un Promise que devuelve las criptomonedas
@@ -36,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     btnCryp.addEventListener('click', (e) =>{
-        mxnData=[]
+     //   mxnData=[]        
+        cadData=[]
         usdData=[]
         eurData=[]
         getDivisas()
@@ -72,12 +77,14 @@ function selectCriptomonedas(criptomonedas) {
 const getDivisas = async () => {
     const moneda = cryp.value;
     const tempo = temp.value;
-    MXN.innerHTML='';
+  //  MXN.innerHTML='';
+    CAD.innerHTML=
     USD.innerHTML='';
     EUR.innerHTML='';
 
     var eurDataConfirm=false;
-    var mxnDataConfirm=false;
+    var cadDataConfirm=false;
+//    var mxnDataConfirm=false;
     var usdDataConfirm=false;
 
     divisas.forEach(async (divisa)=>{
@@ -92,12 +99,16 @@ const getDivisas = async () => {
             USD.appendChild(text);
             usdData =data.map(i => i.close);
             usdDataConfirm=true;
-        }else if (divisa === "MXN"){
+//        }else if (divisa === "MXN"){
+        }else if (divisa === "CAD"){
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode("$"+data[0].close)
-            MXN.appendChild(text);
-            mxnData =data.map(i => i.close);
-            mxnDataConfirm=true;
+//            MXN.appendChild(text);
+            CAD.appendChild(text);
+            cadData =data.map(i => i.close);
+            cadDataConfirm=true;
+//            mxnData =data.map(i => i.close);
+//            mxnDataConfirm=true;
         }else{
             console.log("Datos obtenidos de:\n"+ response.url)
             const text = document.createTextNode("€"+data[0].close)
@@ -134,9 +145,12 @@ const getSimbolos = async () => {
 
 
 }
-function chart (mxnData,usdData, eurData /*, data */){
-    console.log("Hay mxnData:");
-    console.log(mxnData);
+//function chart (mxnData,usdData, eurData /*, data */){
+function chart (cadData,usdData, eurData /*, data */){
+    console.log("Hay cadData:");
+    console.log(cadData);
+//    console.log("Hay mxnData:");
+//    console.log(mxnData);
     console.log("Hay usdData:");
     console.log(usdData);
     console.log("Hay eurData:");
@@ -151,8 +165,10 @@ function chart (mxnData,usdData, eurData /*, data */){
             //labels: data.map(i => i.time),
             datasets: [
             {
-                data: mxnData.map(i=>i),
-                label: "Peso",
+//                data: mxnData.map(i=>i),
+//                label: "Peso",
+                data: cadData.map(i=>i),
+                label: "Dolar Canadiense",
                 borderColor: "#3e95cd",
                 fill: false,
             },
