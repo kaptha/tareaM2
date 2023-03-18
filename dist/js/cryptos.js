@@ -116,6 +116,7 @@ const getDivisas = async () => {
 
 const getSimbolos = async () => {
     logoCryp.innerHTML='';
+    CRY.innerHTML='';
     const moneda = cryp.value;
 
     const response = await fetch('https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol='+moneda)
