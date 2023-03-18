@@ -190,7 +190,7 @@ const getSimbolos = async (moneda) => {
             mxnDataConfirm=true;
         }else{
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('es-MX', {style: 'currency',currency: 'EUR', minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',}).format(data[0].close))
             EUR.appendChild(text);
             eurData =data.map(i => i.close);
             eurDataConfirm=true;
