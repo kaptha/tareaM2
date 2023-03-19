@@ -97,19 +97,19 @@ const getDivisas = async () => {
         
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode("$"+data[0].close)
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(data[0].close))
             USD.appendChild(text);
             usdData =data.map(i => i.close);
             usdDataConfirm=true;
         }else if (divisa === "CAD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode("$"+data[0].close)
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'usd',minimumFractionDigits: 2}).format(data[0].close))
             CAD.appendChild(text);
             cadData =data.map(i => i.close);
             cadDataConfirm=true;
         }else{
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode("€"+data[0].close)
+            const text = document.createTextNode(Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',minimumFractionDigits: 2}).format(data[0].close))
             EUR.appendChild(text);
             eurData =data.map(i => i.close);
             eurDataConfirm=true;
