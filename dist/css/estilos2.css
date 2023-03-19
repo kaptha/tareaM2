@@ -31,3 +31,8 @@
     display: flex;
     flex-direction: column;
   }
+  .integrantes{
+    background: linear-gradient(rgb(0, 0, 0) 60%, rgb(17, 17, 27));
+    color: white;
+    font-size: 20px;
+  }

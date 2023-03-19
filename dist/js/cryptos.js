@@ -90,7 +90,7 @@ const getDivisas = async () => {
 
     divisas.forEach(async (divisa)=>{
         
-        const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=9')
+        const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
         const {Data} = await response.json();
         const data = Data.Data;
         console.log(data);
@@ -134,9 +134,10 @@ const getCritpo = async (moneda) => {
      if(moneda===mon_nam.CoinInfo.Name)
         {
             const textc = document.createTextNode(mon_nam.CoinInfo.FullName)
-            CRY.style.fontSize="20px"
+            CRY.style.fontSize="18px"
             CRY.appendChild(textc);
             const textc2 = document.createTextNode(moneda)
+            CRY2.style.fontSize="16px"
             CRY2.appendChild(textc2);
         }
     })
@@ -170,7 +171,7 @@ const cargarPrecios = async () => {
     var usdDataConfirm=false;
   
     divisas.forEach(async (divisa)=>{
-        const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=10')
+        const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
         
         const {Data} = await response.json();
         const data = Data.Data;
@@ -219,7 +220,7 @@ function chart (cadData,usdData, eurData /*, data */){
     const chartConfig ={
         type: "line",
         data: {
-            labels: [1,2,3,4,5,6,7,8,9,10],
+            labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],
             //labels: data.map(i => i.time),
             datasets: [
             {
@@ -244,6 +245,7 @@ function chart (cadData,usdData, eurData /*, data */){
             ],
         },
         options: {
+          
             legend: {
                 labels: {
                     fontColor: "#b2b9bf",
@@ -259,7 +261,7 @@ function chart (cadData,usdData, eurData /*, data */){
                     {
                     ticks: {
                         fontColor: "#b2b9bf",
-                        fontSize: 12,
+                        fontSize: 15,
                     },
                     },
                 ],
@@ -272,6 +274,7 @@ function chart (cadData,usdData, eurData /*, data */){
                     },
                 ],
             },
+          
         },
     }
     new Chart(
