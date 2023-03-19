@@ -171,6 +171,7 @@ const cargarPrecios = async () => {
   
     divisas.forEach(async (divisa)=>{
         const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=10')
+        
         const {Data} = await response.json();
         const data = Data.Data;
         console.log(data);
@@ -183,7 +184,7 @@ const cargarPrecios = async () => {
             usdDataConfirm=true;
         }else if (divisa === "CAD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('en_CA', {style: 'currency', currency: 'CAD',minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'usd',minimumFractionDigits: 2}).format(data[0].close))
             CAD.appendChild(text);
             cadData =data.map(i => i.close);
             cadDataConfirm=true;
