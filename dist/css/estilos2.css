@@ -9,3 +9,25 @@
     scale: 1.02;
     background-image: radial-gradient(  rgb(68, 40, 65),black);
 }
+.simple-linear-eur {
+    background: linear-gradient(rgb(0, 0, 86) 60%, rgb(40, 42, 172));
+  }
+.simple-linear-eur:hover{
+    scale: 1.02;   
+}
+  .simple-linear-usa {
+    background: linear-gradient(rgb(118, 0, 0) 80%, rgb(209, 101, 101));
+  }
+  .simple-linear-usa:hover{
+    scale: 1.02;   
+}
+  .simple-linear-can {
+    background: linear-gradient(rgb(33, 62, 204) 70%, rgb(67, 188, 249));
+  }
+  .simple-linear-can:hover{
+    scale: 1.02;   
+}
+  .orden-cripto{
+    display: flex;
+    flex-direction: column;
+  }
