@@ -97,13 +97,13 @@ const getDivisas = async () => {
         
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}).format(data[0].close))
             USD.appendChild(text);
             usdData =data.map(i => i.close);
             usdDataConfirm=true;
         }else if (divisa === "CAD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'usd',minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'CAD',minimumFractionDigits: 2}).format(data[0].close))
             CAD.appendChild(text);
             cadData =data.map(i => i.close);
             cadDataConfirm=true;
@@ -179,13 +179,13 @@ const cargarPrecios = async () => {
 
         if(divisa === "USD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}).format(data[0].close))
             USD.appendChild(text);
             usdData =data.map(i => i.close);
             usdDataConfirm=true;
         }else if (divisa === "CAD"){
             console.log("Datos obtenidos de:\n"+ response.url)
-            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'usd',minimumFractionDigits: 2}).format(data[0].close))
+            const text = document.createTextNode(Intl.NumberFormat('en-IN', {style: 'currency', currency: 'CAD',minimumFractionDigits: 2}).format(data[0].close))
             CAD.appendChild(text);
             cadData =data.map(i => i.close);
             cadDataConfirm=true;
