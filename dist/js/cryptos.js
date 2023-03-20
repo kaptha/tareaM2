@@ -91,6 +91,7 @@ const getDivisas = async () => {
     var usdDataConfirm=false;
 
     divisas.forEach(async (divisa)=>{
+    
         const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
         const {Data} = await response.json();
         const data = Data.Data;
@@ -204,15 +205,12 @@ const cargarGrafico = async () => {
         formulario.reset();
    }
 
-const cargarPrecios = async () => {  
-    
-    
+const cargarPrecios = async () => {   
+
     divisas.forEach(async (divisa)=>{
-       
-        const response = await fetch('https://data-api.cryptocompare.com/index/cc/v1/latest/tick?market=ccix&instruments=BTC-'+divisa)
+        const response = await fetch('https://data-api.cryptocompare.com/index/cc/v1/latest/tick?market=ccix&instruments='+moneda+'-'+divisa)
         const {Data} = await response.json();
         const datos = await Data['BTC-'+divisa].VALUE;
-       
      console.log(datos);
         if(divisa === "USD"){
              USD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
