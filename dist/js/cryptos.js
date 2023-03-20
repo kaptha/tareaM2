@@ -21,7 +21,7 @@ const logoCryp = document.querySelector('.LogoCryp')
 const logoCAD = document.querySelector('.logoCAD')
 const logoUSD = document.querySelector('.LogoUSD')
 const logoEUR = document.querySelector('.LogoEUR')
-
+var moneda="BTC"
 const cryptos =[];
 const divisas = [
     "USD", "CAD", "EUR"
@@ -33,24 +33,29 @@ const obtenerCriptomonedas  = criptomonedas => new Promise( resolve => {
 });
 document.addEventListener('DOMContentLoaded', () => {
 	consultarCriptomonedas();
-
-    //111111l lo siguiente es para inicial la pagina para que aparezcan datos de la criptomoneda principal 111111///////
-    moneda="BTC"
-    getSimbolos(moneda);
-    getCritpo(moneda);
-    cargarPrecios();
-    //111111l aqui termina la inicialización  111111///////
-    
+    getSimbolos();
+    getCritpo();
+    cargarGrafico();
+    datos_tiempo_real();
+    sincrona();
     btnCryp.addEventListener('click', (e) =>{
          
         cadData=[]
         usdData=[]
         eurData=[]
         getDivisas()
-        getSimbolos(cryp.value);
-        getCritpo(cryp.value);
+        getSimbolos();
+        getCritpo();
+        //getSimbolos(cryp.value);
+        //getCritpo(cryp.value);
     }) 
 });
+//Función 
+function datos_tiempo_real(){
+cargarPrecios();
+setTimeout("datos_tiempo_real()",1000)
+
+}
 //Rellenar select de criptomonedas
 function consultarCriptomonedas() {
     const urlcryp = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=15&tsym=USD';
@@ -78,9 +83,9 @@ function selectCriptomonedas(criptomonedas) {
 
 
 const getDivisas = async () => {
-    const moneda = cryp.value;
+     moneda = cryp.value;
     const tempo = temp.value;
-    CAD.innerHTML=
+    CAD.innerHTML='';
     USD.innerHTML='';
     EUR.innerHTML='';
 
@@ -89,7 +94,6 @@ const getDivisas = async () => {
     var usdDataConfirm=false;
 
     divisas.forEach(async (divisa)=>{
-        
         const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
         const {Data} = await response.json();
         const data = Data.Data;
@@ -123,7 +127,7 @@ const getDivisas = async () => {
     })
 }
 
-const getCritpo = async (moneda) => {
+const getCritpo = async () => {
     CRY.innerHTML='';
     CRY2.innerHTML='';
    //const moneda = cryp.value;
@@ -144,11 +148,11 @@ const getCritpo = async (moneda) => {
         
 }
 
-const getSimbolos = async (moneda) => {
+const getSimbolos = async () => {
     logoCryp.innerHTML='';
     CRY.innerHTML='';
     
-   // const moneda = cryp.value;
+   
     const response = await fetch('https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol='+moneda)
     const {Data} = await response.json();
     const logo = Data.LOGO_URL;
@@ -160,8 +164,8 @@ const getSimbolos = async (moneda) => {
 
 
 }
-const cargarPrecios = async () => {
-    const moneda = "BTC";
+const cargarGrafico = async () => {
+    
     const tempo = "histohour";
     CAD.innerHTML='';
     USD.innerHTML='';
@@ -172,7 +176,6 @@ const cargarPrecios = async () => {
   
     divisas.forEach(async (divisa)=>{
         const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
-        
         const {Data} = await response.json();
         const data = Data.Data;
         console.log(data);
@@ -202,6 +205,30 @@ const cargarPrecios = async () => {
     })
     $("#samedata-modal").modal("hide");
         formulario.reset();
+   }
+
+const cargarPrecios = async () => {  
+    
+    
+    divisas.forEach(async (divisa)=>{
+       
+        const response = await fetch('https://data-api.cryptocompare.com/index/cc/v1/latest/tick?market=ccix&instruments=BTC-'+divisa)
+        const {Data} = await response.json();
+        const datos = await Data['BTC-'+divisa].VALUE;
+       
+     console.log(datos);
+        if(divisa === "USD"){
+             USD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
+        }else if (divisa === "CAD"){
+            CAD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
+        }else{
+            if (divisa === "EUR"){
+            EUR.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
+            }
+        }
+    })
+  //  $("#samedata-modal").modal("hide");
+   //     formulario.reset();
    }
 
  //Código del grafico
