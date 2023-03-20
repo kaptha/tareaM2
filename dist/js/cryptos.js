@@ -37,17 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     getCritpo();
     cargarGrafico();
     datos_tiempo_real();
-    sincrona();
+    
     btnCryp.addEventListener('click', (e) =>{
-         
         cadData=[]
         usdData=[]
         eurData=[]
         getDivisas()
         getSimbolos();
         getCritpo();
-        //getSimbolos(cryp.value);
-        //getCritpo(cryp.value);
     }) 
 });
 //Función 
