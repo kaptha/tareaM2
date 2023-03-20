@@ -215,10 +215,10 @@ const cargarPrecios = async () => {
         if(divisa === "USD"){
              USD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
         }else if (divisa === "CAD"){
-            CAD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
+            CAD.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency', currency: 'CAD',minimumFractionDigits: 2}).format(datos)
         }else{
             if (divisa === "EUR"){
-            EUR.innerHTML= Intl.NumberFormat('en-IN', {style: 'currency',currency: 'usd', minimumFractionDigits: 2}).format(datos)
+            EUR.innerHTML= Intl.NumberFormat('en-DE', {style: 'currency', currency: 'EUR',minimumFractionDigits: 2}).format(datos)
             }
         }
     })
