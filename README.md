@@ -6,7 +6,7 @@
 ## Nuestro proyecto
 #### Este proyecto permite ver  información util de precios en tiempo real. La información obtenida puede tener un retraso de 3 a 6 segundos. Puede mostrar información de alrededor de 10 criptomonedas y su valor en 3 divisas diferentes las cuales son dolares canadienses, dolares estadounidenses y euros.
 
-### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
+#### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
 
 ### Los Integrantes:
 #### Jesus Antonio Git: Jesus-007-cmd
