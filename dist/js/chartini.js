@@ -1,6 +1,14 @@
 
+var  chartCryptos =document.createElement('canvas');
+//document.addEventListener('DOMContentLoaded', () => { })
 
-const Grafica =new Chart(document.getElementById("line-chart"), {
+chartCryptos.style="height: 150px"
+chartCryptos.id="line-chart";
+graphics.appendChild(chartCryptos)
+
+
+//const Grafica =new Chart(document.getElementById("line-chart"), {
+  const Grafica =new Chart(chartCryptos, {
   type: "line",
   data: {
     labels: [4500, 3500, 3200, 3050, 2700, 2450, 2200, 1750, 1499, 2050],
@@ -59,3 +67,4 @@ const Grafica =new Chart(document.getElementById("line-chart"), {
   },
 });
 
+//export default chartini

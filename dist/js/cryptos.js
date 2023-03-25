@@ -1,7 +1,12 @@
+ //import conversorfecha from "./conversorfecha";
 //Grafica
-const chartCryptos = document.getElementById("line-chart")
+//const chartCryptos = document.getElementById("line-chart")
+
 
 const btnCryp = document.querySelector('#btnCryp');
+const graphics = document.querySelector('#grafica');
+
+
 const temp = document.querySelector('#temp');
 const cryp = document.querySelector('#cryp');
 const formulario = document.querySelector('#crip-form');
@@ -22,6 +27,7 @@ const logoCAD = document.querySelector('.logoCAD')
 const logoUSD = document.querySelector('.LogoUSD')
 const logoEUR = document.querySelector('.LogoEUR')
 var moneda="BTC"
+var tempo = "histohour";
 const cryptos =[];
 const divisas = [
     "USD", "CAD", "EUR"
@@ -32,10 +38,15 @@ const obtenerCriptomonedas  = criptomonedas => new Promise( resolve => {
     resolve(criptomonedas);
 });
 document.addEventListener('DOMContentLoaded', () => {
+   
 	consultarCriptomonedas();
     getSimbolos();
     getCritpo();
+    
+   
+
     cargarGrafico();
+   
     datos_tiempo_real();
     
     btnCryp.addEventListener('click', (e) =>{
@@ -80,6 +91,12 @@ function selectCriptomonedas(criptomonedas) {
 
 
 const getDivisas = async () => {
+    graphics.innerHTML=""
+    chartCryptos =document.createElement('canvas');
+    chartCryptos.style="height: 150px"
+chartCryptos.id="line-chart";
+graphics.appendChild(chartCryptos)
+
      moneda = cryp.value;
     const tempo = temp.value;
     CAD.innerHTML='';
@@ -91,7 +108,7 @@ const getDivisas = async () => {
     var usdDataConfirm=false;
 
     divisas.forEach(async (divisa)=>{
-    
+        
         const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
         const {Data} = await response.json();
         const data = Data.Data;
@@ -119,6 +136,7 @@ const getDivisas = async () => {
         if(eurDataConfirm&&cadDataConfirm&&usdDataConfirm){    
           
             chart(cadData,usdData, eurData, data);
+           // charti(cadData,usdData, eurData);
         } 
         $("#samedata-modal").modal("hide");
         formulario.reset();
@@ -164,16 +182,16 @@ const getSimbolos = async () => {
 }
 const cargarGrafico = async () => {
     
-    const tempo = "histohour";
+    
+
     CAD.innerHTML='';
     USD.innerHTML='';
     EUR.innerHTML='';
     var eurDataConfirm=false;
     var cadDataConfirm=false;
     var usdDataConfirm=false;
-  
     divisas.forEach(async (divisa)=>{
-        const response = await fetch('https://min-api.cryptocompare.com/data/v2/'+tempo+'?fsym='+moneda+'&tsym='+divisa+'&limit=40')
+        const response = await fetch('https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym='+divisa+'&limit=40')
         const {Data} = await response.json();
         const data = Data.Data;
         console.log(data);
@@ -198,11 +216,13 @@ const cargarGrafico = async () => {
             eurDataConfirm=true;
         }
         if(eurDataConfirm&&cadDataConfirm&&usdDataConfirm){
-            chart(cadData,usdData, eurData, data);
+      
+            //charti(cadData,usdData, eurData, data);
+            chart(cadData,usdData, eurData,data);
+            
         } 
     })
-    $("#samedata-modal").modal("hide");
-        formulario.reset();
+  
    }
 
 const cargarPrecios = async () => {   
@@ -222,28 +242,28 @@ const cargarPrecios = async () => {
             }
         }
     })
-  //  $("#samedata-modal").modal("hide");
-   //     formulario.reset();
+  
    }
 
+
  //Código del grafico
-function chart (cadData,usdData, eurData /*, data */){
+function chart (cadData,usdData, eurData , times){
+    chartCryptos.innerHTML=""
     console.log("Hay cadData:");
     console.log(cadData);
     console.log("Hay usdData:");
     console.log(usdData);
     console.log("Hay eurData:");
     console.log(eurData);
-
     Grafica.destroy();
 
-
-   
     const chartConfig ={
         type: "line",
         data: {
-            labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],
+          labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],
             //labels: data.map(i => i.time),
+            
+        
             datasets: [
             {
                 data: cadData.map(i=>i),
@@ -299,9 +319,10 @@ function chart (cadData,usdData, eurData /*, data */){
           
         },
     }
-    new Chart(
+   new Chart(
         chartCryptos,
         chartConfig
     )
+ 
 }
 
