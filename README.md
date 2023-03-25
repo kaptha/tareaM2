@@ -8,6 +8,9 @@
 
 #### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
 
+## instalacion
+####  nuestro sistema trabaja sobre u sitio web ,por lo que no requiere ninguna instalacion.
+
 ### Los Integrantes:
 #### Jesus Antonio Git: Jesus-007-cmd
 #### Rodrigo Quintanar Git: RoRo2023
