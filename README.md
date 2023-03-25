@@ -17,7 +17,15 @@
 
 #### Al iniciar la página se muestran cuatro recuadros con descripción acerca de la criptomoneda y las divisas, el primero indica el nombre de la criptomoneda así como su nombre corto, por default se carga el bitcoin por lo que aparece Bitcoin y abajo BTC que es su nombre corto. Atras de los nombres se muestra el simbolo de dicha criptomoneda.
 
- 
+### ¿como puedo buscar otras criptomonedas?
+
+#### Para buscar otras criptomonedas hay que precionar el boton buscar moneda:
+
+ ![buscar monedas](https://user-images.githubusercontent.com/119013563/227681979-b3ab8fce-592b-4add-bea3-d9da44b8c51d.png)
+
+#### cuando precionas buscar moneda ,aparecera el siguiente recuadro en el que podras buscar las monedas,en la primera opcion llamada cripto-moneda, y en la segunda opcion permitira elegir una temporalidad:
+![Recuadro monedas](https://user-images.githubusercontent.com/119013563/227682117-9faa5c2e-fff0-48a7-b28d-35c964f32e9b.png)
+
 
 Los otros 3 recuadros muetran el precio del la moneda en 3 diferentes divisas las cuales son dolares canadienses, dolares estadounidenses y euros.
 ### Los Integrantes:
