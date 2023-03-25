@@ -34,6 +34,14 @@
 
 ![lista monedas](https://user-images.githubusercontent.com/119013563/227682404-03212afe-6260-4f0c-9e34-e503c8fbe145.png)
 
+### Opcion temporalidad
+
+#### En esta opcion se puede observar la temporalidad en la que se quiere elegir el grafico de la cripto moneda,ya se por dia, por hora o por minuto.
+
+![temporalidad](https://user-images.githubusercontent.com/119013563/227682646-06de3628-4a3b-4eaf-aeec-3f19959055e9.png)
+
+
+
 
 
 ### Los Integrantes:
