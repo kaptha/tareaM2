@@ -8,9 +8,18 @@
 
 #### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
 
-## instalacion
-####  nuestro sistema trabaja sobre u sitio web ,por lo que no requiere ninguna instalacion.
+## Instalacion
+####  Nuestro sistema trabaja sobre u sitio web ,por lo que no requiere ninguna instalacion.
 
+## Pantalla inicial
+#### A continuacion se muestra nuestra pagina cuando carga.
+![pagiana principal](https://user-images.githubusercontent.com/119013563/227681585-bf415487-63fb-4c10-9817-1ebea3f297de.png)
+
+#### Al iniciar la página se muestran cuatro recuadros con descripción acerca de la criptomoneda y las divisas, el primero indica el nombre de la criptomoneda así como su nombre corto, por default se carga el bitcoin por lo que aparece Bitcoin y abajo BTC que es su nombre corto. Atras de los nombres se muestra el simbolo de dicha criptomoneda.
+
+ 
+
+Los otros 3 recuadros muetran el precio del la moneda en 3 diferentes divisas las cuales son dolares canadienses, dolares estadounidenses y euros.
 ### Los Integrantes:
 #### Jesus Antonio Git: Jesus-007-cmd
 #### Rodrigo Quintanar Git: RoRo2023
