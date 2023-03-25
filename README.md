@@ -4,6 +4,9 @@
 #  PROYECTO 3: Tablero de Datos ("Dashboard")
 
 ## Nuestro proyecto
+
+#### La criptomoneda, también llamada moneda virtual, es un tipo de moneda digital que solo existe electrónicamente.
+
 #### Este proyecto permite ver información útil de precios en tiempo real. La información obtenida puede tener un retraso de 3 a 6 segundos. Puede mostrar información de alrededor de 10 criptomonedas y su valor en 3 divisas diferentes las cuales son dólares canadienses, dólares estadounidenses y euros.
 
 #### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
@@ -36,7 +39,7 @@
 
 ### Opción Temporalidad
 
-#### En esta opción se puede observar la temporalidad en la que se quiere elegir el gráfico de la cripto moneda, ya se por día, por hora o por minuto.
+#### En esta opción se puede observar la temporalidad en la que se quiere elegir el gráfico de la criptomoneda, ya sea por día, por hora o por minuto.
 
 ![temporalidad](https://user-images.githubusercontent.com/119013563/227682646-06de3628-4a3b-4eaf-aeec-3f19959055e9.png)
 
