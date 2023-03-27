@@ -12,7 +12,39 @@
 #### El proyecto además muestra la fecha y la hora y tiene una función de audio para dar una bienvenida a la persona que visita el sitio.
 
 ## Instalación
-####  Nuestro sistema trabaja sobre un sitio web, por lo que no requiere ninguna instalación.
+#### Nuestro sistema trabaja sobre un sitio web, por lo que no requiere ninguna instalación. Sin embargo, si se desea publicar en git-hub pages para su visualización se haría de la siguiente manera:
+#### Primero entramos a nuestra cuenta de git-hub, en mi caso es Jesus-007-cmd
+ ![image](https://user-images.githubusercontent.com/118942603/227802427-361913d5-f55f-4d69-9a67-c30c7d984cb6.png)
+
+#### De ahí damos click en new:
+ ![image](https://user-images.githubusercontent.com/118942603/227802455-652cc73b-23fd-458d-9f29-34c4637df4f0.png)
+
+#### Como se puede observar nos pedirá un nombre que en mi caso personal use como Dashboard-de-Cryptos, también pedirá una descripción, nos preguntará que si lo queremos hacer publico o privado entre otras opciones.
+#### Como nuestro proyecto ya tiene un readme no es necesario agregarlo por fuera ya que fue desarrollado en el mismo git-hub aportando en ramas y haciendo commits directamente sobre la rama master como colaboradores en el git-hub de nuestro compañero Mario Díaz el cual es: kaptha/tareaM2 (github.com). Por lo tanto, dejamos Add a README file en blanco y las demás opciones las dejamos igual:
+![image](https://user-images.githubusercontent.com/118942603/227802462-171c5ab9-a729-4079-b9ba-90b69c647c1d.png)
+
+#### Una vez llenado todos los campos, damos click en create repository.
+#### Después de eso nos pedirá la ruta de nuestro repositorio la cual fue: https://github.com/kaptha/tareaM2  y mostrará una ventana en la cual mostrará una línea que indicará el avance de carga de nuestra aplicación web. Como se puede observar en la siguiente imagen nos informa que puede ser cerrada la ventana:
+ ![image](https://user-images.githubusercontent.com/118942603/227802479-fb6d3bc0-ab04-4c78-ac7b-330c80f18789.png)
+
+####En caso de esperar y no cerrarla mostrará lo siguiente cuando haya finalizado:
+ ![image](https://user-images.githubusercontent.com/118942603/227802490-160c530c-3110-48d4-9670-40346ed84391.png)
+
+#### Para continuar con la publicación de nuestra pagina entramos en el enlace generado en la ventana anterior (Jesus-007-cmd/Dashboard-de-Cryptos):
+ ![image](https://user-images.githubusercontent.com/118942603/227802494-45625f2e-1655-4478-a03d-9436a24f3bbd.png)
+
+#### Se puede observar que el proyecto realizado en la cuenta de Mario Diaz ya se encuentra en nuestro repositorio personal el cual es Jesus-007-cmd. Es idéntico como si nosotros la hubiéramos creado desde un principio, así como la descripción dentro del proyecto (About).
+#### Para continuar con la publicación en la ventana anterior nos vamos a Settings:
+![image](https://user-images.githubusercontent.com/118942603/227802511-a9133274-f811-4214-9427-08907751c03e.png)
+
+#### Una vez dentro de settings en el panel izquierdo bajando un poco entramos a pages. (En la imagen anterior se marco de rojo):
+ ![image](https://user-images.githubusercontent.com/118942603/227802523-3c404ff0-19da-4685-aea7-e02840f7f8d0.png)
+
+#### Una vez entrado en dicha opción elegiremos en source deploy from a Branch y elegimos justo abajo la rama que queremos publicar para nuestro caso es la master y damos click sobre el botón sabe mostrando nueva información:
+ ![image](https://user-images.githubusercontent.com/118942603/227802532-7d4641cb-f98c-4249-9377-4d5ceb53ecda.png)
+
+#### La información que arroja nos permite  elegir un dominio personalizado entre otras cosas. Reactualizando la página o volviendo entrar a pages nos arrojara el sitio:
+ ![image](https://user-images.githubusercontent.com/118942603/227802546-a42b8674-8a52-4a99-9746-8caa15c096f4.png)
 
 ## Pantalla inicial
 #### A continuación se muestra nuestra página cuando carga.
